@@ -2,27 +2,56 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파랑새 뮤직 스튜디오</title>
-    <style>
-        body { background-color: #1a1b26; color: #a9b1d6; font-family: 'Malgun Gothic', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .container { text-align: center; background: #24283b; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #414868; max-width: 500px; }
-        h1 { color: #ff9e64; font-size: 28px; margin-bottom: 20px; border-bottom: 2px solid #ff9e64; padding-bottom: 10px; }
-        .lyrics { white-space: pre-line; line-height: 2.2; font-size: 19px; color: #c0caf5; margin-bottom: 30px; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🎵 가슴에 핀 꽃</h1>
-        <div class="lyrics">
-            보고 싶다 내 딸아
-            꿈속에서도 부르는 내 딸아
-            너를 잊은 적 없다
-            단 한 숨도 너 없인 쉬지 않았다
 
-            어디에 있든 아프지 마라
-            내 목숨보다 귀한 사람아
+    <header class="navbar">
+        <div class="container nav-container">
+            <h1 class="logo">파랑새 뮤직</h1>
+            <nav class="nav-menu">
+                <a href="#home">홈</a>
+                <a href="#music">나의 노래</a>
+                <a href="#about">스튜디오 소개</a>
+                <a href="#contact">방명록</a>
+            </nav>
         </div>
-        <div style="font-size:14px; color:#565f89;">16년의 그리움을 담아, 아버지가 만든 노래</div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2 class="hero-title">가슴에 핀 꽃</h2>
+                <p class="hero-subtitle">16년의 그리움을 담아 만든 노래</p>
+                <div class="hero-buttons">
+                    <button onclick="scrollToMusic()" class="btn btn-primary">노래 듣기</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="music" class="music-gallery">
+            <div class="container">
+                <h3 class="section-title">추천 음악</h3>
+                <div id="music-grid" class="music-grid">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePlayer()">&times;</span>
+            <div id="player-info"></div>
+            <div class="controls">
+                <button onclick="previousTrack()">이전</button>
+                <button id="playBtn" onclick="togglePlay()">재생</button>
+                <button onclick="nextTrack()">다음</button>
+            </div>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

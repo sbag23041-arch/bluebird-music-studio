@@ -1,26 +1,26 @@
-// 1. 노래 데이터 설정 (영문 속성명을 사용해야 작동합니다)
+// 1. 노래 데이터 (영문 속성명을 사용하여 브라우저가 인식하게 함)
 const musicData = [
     { 
         id: 1, 
         title: '퇴근 길 버스 창가에 1', 
         artist: '파랑새', 
-        category: 'ballad', 
-        mood: 'longing',    
-        src: '퇴근 길 버스 창가에1.mp3' 
+        category: 'ballad', // 발라드 버튼용
+        mood: 'longing',    // 그리움 버튼용
+        src: '퇴근 길 버스 창가에 1.mp3' 
     },
     { 
         id: 2, 
         title: '퇴근 길 버스 창가에 2', 
         artist: '파랑새', 
-        category: 'ballad', 
-        mood: 'longing', 
-        src: '퇴근 길 버스 창가에2.mp3' 
+        category: category: 'trot',   // 트로트 버튼용
+        mood: 'longing',    // 그리움 버튼용
+        src: '퇴근 길 버스 창가에 2.mp3' 
     }
 ];
 
 const audio = new Audio();
 
-// 2. 화면에 노래 목록을 그리는 함수
+// 2. 노래 목록을 화면에 그리는 함수
 function displayMusic(data) {
     const musicGrid = document.getElementById('music-grid');
     if (!musicGrid) return;
@@ -39,17 +39,18 @@ function displayMusic(data) {
     `).join('');
 }
 
-// 3. 분류 기능
+// 3. 분류(필터) 기능 - 버튼을 눌렀을 때 실행됩니다
 function filterMusic(type) {
     if (type === 'all') {
         displayMusic(musicData);
     } else {
+        // category(장르)나 mood(분위기)가 클릭한 type과 일치하는 것만 골라냄
         const filtered = musicData.filter(song => song.category === type || song.mood === type);
         displayMusic(filtered);
     }
 }
 
-// 4. 노래 재생 창 열기
+// 4. 노래 재생 모달 열기
 function openPlayerById(id) {
     const song = musicData.find(s => s.id === id);
     if (!song) return;
@@ -61,24 +62,14 @@ function openPlayerById(id) {
     modal.style.display = 'block';
     
     audio.src = song.src;
-    audio.play();
+    audio.play().catch(e => console.log("재생 오류:", e));
 }
 
-// 5. 창 닫기
+// 5. 모달 닫기
 function closePlayer() {
-    const modal = document.getElementById('playerModal');
-    if (modal) modal.style.display = 'none';
+    document.getElementById('playerModal').style.display = 'none';
     audio.pause();
 }
 
-// 재생/일시정지 버튼용
-function togglePlay() {
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
-
-// 페이지 로드 시 실행
+// 페이지가 처음 열릴 때 전체 목록을 보여줍니다
 window.onload = () => displayMusic(musicData);

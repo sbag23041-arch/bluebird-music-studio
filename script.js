@@ -2,19 +2,19 @@
 const musicData = [
     { 
         id: 1, 
-        title: '퇴근 길 버스 창가에 1', 
+        title: '퇴근길버스창가에1', 
         artist: '파랑새', 
         category: 'ballad', // '발라드' 버튼과 연결
         mood: 'longing',    // '그리움/이별' 버튼과 연결
-        src: '퇴근 길 버스 창가에 1.mp3' 
+        src: '퇴근길버스창가에1.mp3' 
     },
     { 
         id: 2, 
-        title: '퇴근 길 버스 창가에 2', 
+        title: '퇴근길버스창가에 2', 
         artist: '파랑새', 
         category: 'trot',   // '트로트' 버튼과 연결
         mood: 'longing',    // '그리움/이별' 버튼과 연결
-        src: '퇴근 길 버스 창가에 2.mp3' 
+        src: '퇴근길버스창가에2.mp3' 
     }
 ];
 

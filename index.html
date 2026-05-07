@@ -10,7 +10,14 @@
 
     <header class="navbar">
         <div class="container nav-container">
-            <h1 class="logo">파랑새 뮤직</h1>
+            <h1 class="logo">
+    <span style="display:flex; align-items:center; gap:10px;">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M21 3l-6 1.45V14.5a3.5 3.5 0 1 0 2 3.12V6.4l4-1v-2.4zm-9 11.5a3.5 3.5 0 1 0 2 3.12V3.12l-7 1.7V14.5a3.5 3.5 0 1 0 2 3.12V6.4l5-1.2v9.3z"/>
+        </svg>
+        Bluebird Music
+    </span>
+</h1>
             <nav class="nav-menu">
                 <a href="#home">홈</a>
                 <a href="#music">나의 노래</a>
@@ -23,7 +30,19 @@
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <h2 class="hero-title">가슴에 핀 꽃</h2>
+                <section id="home" class="hero">
+    <div class="container" style="text-align: center;">
+        <h2 class="hero-title" style="font-family: 'Georgia', serif; font-style: italic; letter-spacing: 2px;">
+            Bluebird Music Studio
+        </h2>
+        <p class="hero-subtitle" style="font-size: 1.1rem; opacity: 0.8;">
+            Since 2010 | Echoes of Longing
+        </p>
+        <div class="hero-buttons" style="margin-top: 40px;">
+            <button onclick="scrollToMusic()" class="btn btn-primary">Enter Studio</button>
+        </div>
+    </div>
+</section>
                 <p class="hero-subtitle">16년의 그리움을 담아 만든 노래</p>
                 <div class="hero-buttons">
                     <button onclick="scrollToMusic()" class="btn btn-primary">노래 듣기</button>

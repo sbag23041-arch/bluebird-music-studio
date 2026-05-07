@@ -5,15 +5,15 @@ const musicData = [
         title: '퇴근 길 버스 창가에 1', 
         artist: '파랑새', 
         category: 'ballad', // 발라드
-        mood: 'longing',    // 그리움
+        mood: 'longing',    // 삶
         src: '퇴근 길 버스 창가에1.mp3' 
     },
     { 
         id: 2, 
         title: '퇴근 길 버스 창가에 2', 
         artist: '파랑새', 
-        category: 'trot',    // 트로트
-        mood: 'longing',    // 그리움
+        category: 'ballad', // 발라드
+        mood: 'longing',    // 삶
         src: '퇴근 길 버스 창가에2.mp3' 
     }
 ];

@@ -1,42 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <header class="navbar">
-    <div class="container nav-container">
-        <h1 class="logo" style="display: flex; align-items: center; gap: 12px;">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 5C21 5 18 2 13 4C8 6 5 11 3 13C1 15 2 18 4 19C6 20 9 19 11 17L13 15" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="16" cy="14" r="2" fill="#fbbf24"/>
-                <path d="M18 14V6L22 8" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            
-            <div style="display: flex; flex-direction: column; line-height: 1.2;">
-                <span style="font-size: 1.2rem; font-weight: bold; color: #ffffff;">파랑새</span>
-                <span style="font-size: 0.9rem; color: #fbbf24; letter-spacing: 1px;">Music</span>
-            </div>
-        </h1>
-
-        <nav class="nav-menu">
-            <a href="#home">홈</a>
-            <a href="#music">나의 노래</a>
-            <a href="#about">스튜디오 소개</a>
-            <a href="#contact">방명록</a>
-        </nav>
-    </div>
-</header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파랑새 뮤직 스튜디오</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 로고와 텍스트를 정교하게 맞추기 위한 추가 디자인 */
+        .logo-group { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-ko { font-size: 1.3rem; font-weight: bold; color: #ffffff; }
+        .logo-en { font-size: 0.85rem; color: #fbbf24; letter-spacing: 1px; text-transform: uppercase; }
+        /* 중앙 영문 타이틀 스타일 */
+        .hero-title-en { font-family: 'Georgia', serif; font-size: 3.5rem; font-style: italic; letter-spacing: 2px; margin-bottom: 10px; }
+    </style>
 </head>
 <body>
 
     <header class="navbar">
         <div class="container nav-container">
-            <h1 class="logo">
-    <span style="display:flex; align-items:center; gap:10px;">
-        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-            <path d="M21 3l-6 1.45V14.5a3.5 3.5 0 1 0 2 3.12V6.4l4-1v-2.4zm-9 11.5a3.5 3.5 0 1 0 2 3.12V3.12l-7 1.7V14.5a3.5 3.5 0 1 0 2 3.12V6.4l5-1.2v9.3z"/>
-        </svg>
-        Bluebird Music
-    </span>
-</h1>
+            <div class="logo-group">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 5C21 5 18 2 13 4C8 6 5 11 3 13C1 15 2 18 4 19C6 20 9 19 11 17L13 15" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="17" cy="14" r="1.5" fill="#fbbf24"/>
+                    <path d="M18.5 14V7L21 8" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-ko">파랑새</span>
+                    <span class="logo-en">Music</span>
+                </div>
+            </div>
+
             <nav class="nav-menu">
                 <a href="#home">홈</a>
                 <a href="#music">나의 노래</a>
@@ -48,49 +42,37 @@
 
     <main>
         <section id="home" class="hero">
-            <div class="container">
-                <section id="home" class="hero">
-    <div class="container" style="text-align: center;">
-        <h2 class="hero-title" style="font-family: 'Georgia', serif; font-style: italic; letter-spacing: 2px;">
-            Bluebird Music Studio
-        </h2>
-        <p class="hero-subtitle" style="font-size: 1.1rem; opacity: 0.8;">
-            Since 2010 | Echoes of Longing
-        </p>
-        <div class="hero-buttons" style="margin-top: 40px;">
-            <button onclick="scrollToMusic()" class="btn btn-primary">Enter Studio</button>
-        </div>
-    </div>
-</section>
-                <p class="hero-subtitle">16년의 그리움을 담아 만든 노래</p>
-                <div class="hero-buttons">
-                    <button onclick="scrollToMusic()" class="btn btn-primary">노래 듣기</button>
+            <div class="container" style="text-align: center;">
+                <h2 class="hero-title-en">Bluebird Music Studio</h2>
+                <p class="hero-subtitle" style="font-size: 1.2rem; opacity: 0.9;">Echoes of 16 Years of Longing</p>
+                <div class="hero-buttons" style="margin-top: 30px;">
+                    <button onclick="scrollToMusic()" class="btn btn-primary">Enter Studio</button>
                 </div>
             </div>
         </section>
 
         <section id="music" class="music-gallery">
             <div class="container">
-                <h3 class="section-title">추천 음악</h3>
+                <h3 class="section-title">나의 노래 목록</h3>
                 <div id="music-grid" class="music-grid">
                     </div>
             </div>
         </section>
 
-        <section id="about" class="about-section" style="padding: 100px 0; text-align: center; background: #0f172a; color: white;">
+        <section id="about" class="about-section" style="padding: 80px 0; text-align: center; background: rgba(15, 23, 42, 0.8);">
             <div class="container">
                 <h3 class="section-title">스튜디오 소개</h3>
-                <p>AI 기술과 감성이 만나는 파랑새 뮤직 스튜디오입니다.</p>
+                <p>16년의 세월, 아버님의 진심이 담긴 음악 공간입니다.</p>
             </div>
         </section>
     </main>
 
-    <div id="playerModal" class="modal" style="display:none;">
+    <div id="playerModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closePlayer()">&times;</span>
             <div id="player-info"></div>
             <div class="controls" style="margin-top:20px; text-align:center;">
-                <button class="btn" onclick="togglePlay()" id="playBtn">재생/일시정지</button>
+                <button class="btn btn-primary" onclick="togglePlay()" id="playBtn">재생/일시정지</button>
             </div>
         </div>
     </div>

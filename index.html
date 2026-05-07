@@ -38,16 +38,21 @@
                     </div>
             </div>
         </section>
+
+        <section id="about" class="about-section" style="padding: 100px 0; text-align: center; background: #0f172a; color: white;">
+            <div class="container">
+                <h3 class="section-title">스튜디오 소개</h3>
+                <p>AI 기술과 감성이 만나는 파랑새 뮤직 스튜디오입니다.</p>
+            </div>
+        </section>
     </main>
 
-    <div id="playerModal" class="modal">
+    <div id="playerModal" class="modal" style="display:none;">
         <div class="modal-content">
             <span class="close" onclick="closePlayer()">&times;</span>
             <div id="player-info"></div>
-            <div class="controls">
-                <button onclick="previousTrack()">이전</button>
-                <button id="playBtn" onclick="togglePlay()">재생</button>
-                <button onclick="nextTrack()">다음</button>
+            <div class="controls" style="margin-top:20px; text-align:center;">
+                <button class="btn" onclick="togglePlay()" id="playBtn">재생/일시정지</button>
             </div>
         </div>
     </div>

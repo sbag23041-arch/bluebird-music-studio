@@ -1,7 +1,7 @@
 // 음악 데이터
 const musicData = [
-    { id: 1, title: '그리운 마음', artist: '파랑새', genre: 'ballad', category: 'ballad' },
-    { id: 2, title: '추억의 거리', artist: '파랑새', genre: 'trot', category: 'trot' },
+    { id: 1, title: '퇴근 길 버스 창가에1', artist: '파랑새', genre: 'ballad', category: 'ballad' },
+    { id: 2, title: '퇴근 길 버스 창가에2', artist: '파랑새', genre: 'trot', category: 'trot' },
     { id: 3, title: '달빛 아래', artist: '파랑새', genre: 'korean-trot', category: 'korean-trot' },
     { id: 4, title: '그 시절의 노래', artist: '파랑새', genre: '7080음악', category: '70s-80s' },
     { id: 5, title: '밤하늘의 별', artist: '파랑새', genre: 'ballad', category: 'ballad' },

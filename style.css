@@ -246,7 +246,70 @@ textarea{
   }
 
 }
+/* INTRO */
 
+#intro{
+  position:fixed;
+  inset:0;
+
+  background:
+  radial-gradient(circle at center,#1b1d2e,#090a0f);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:99999;
+
+  transition:1s;
+}
+
+#intro.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.intro-content{
+  text-align:center;
+}
+
+.intro-content img{
+  width:140px;
+  height:140px;
+
+  border-radius:50%;
+  object-fit:cover;
+
+  margin-bottom:25px;
+
+  animation:introFloat 3s ease-in-out infinite;
+}
+
+.intro-content h1{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.intro-content p{
+  color:#ddd;
+  font-size:1.1rem;
+}
+
+@keyframes introFloat{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
 
 
 

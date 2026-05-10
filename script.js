@@ -22,7 +22,18 @@ buttons.forEach(button => {
   });
 
 });
+/* INTRO */
 
+window.addEventListener('load',()=>{
+
+  setTimeout(()=>{
+
+    document.getElementById('intro')
+    .classList.add('hide');
+
+  },2500);
+
+});
 
 
 

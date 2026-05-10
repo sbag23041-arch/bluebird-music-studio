@@ -110,8 +110,31 @@ nav{
   margin-bottom:30px;
   color:#8f7cff;
 }
+.content-box p{
+  font-size:1.2rem;
+  color:#ddd;
+}
 
+@media(max-width:900px){
 
+  header{
+    flex-direction:column;
+    gap:20px;
+  }
+.hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-text h1{
+    font-size:2.5rem;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+}
 
 
 

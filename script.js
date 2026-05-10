@@ -34,7 +34,60 @@ window.addEventListener('load',()=>{
   },2500);
 
 });
+/* MUSIC PLAYER */
 
+const uploadInput =
+document.getElementById('music-upload');
+
+const audioPlayer =
+document.getElementById('audio-player');
+
+const songTitle =
+document.getElementById('song-title');
+
+const record =
+document.getElementById('record');
+
+if(uploadInput){
+
+  uploadInput.addEventListener('change',(e)=>{
+
+    const file = e.target.files[0];
+
+    if(file){
+
+      const audioURL =
+      URL.createObjectURL(file);
+
+      audioPlayer.src = audioURL;
+
+      songTitle.textContent = file.name;
+
+      audioPlayer.play();
+
+    }
+
+  });
+
+}
+
+/* RECORD ANIMATION */
+
+if(audioPlayer){
+
+  audioPlayer.addEventListener('play',()=>{
+
+    record.style.animationPlayState = 'running';
+
+  });
+
+  audioPlayer.addEventListener('pause',()=>{
+
+    record.style.animationPlayState = 'paused';
+
+  });
+
+}
 
 
 

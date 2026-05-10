@@ -469,6 +469,9 @@ textarea{
     pointer-events: none;
 }
 
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+#record { animation: spin 6s linear infinite !important; animation-play-state: paused !important; }
+#intro.hide { opacity: 0; visibility: hidden; pointer-events: none; }
 
 
 

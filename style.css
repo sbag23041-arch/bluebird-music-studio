@@ -449,6 +449,25 @@ textarea{
 #music-upload{
   display:none;
 }
+/* 레코드판 회전 애니메이션 정의 */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#record {
+    /* 초기 애니메이션 설정 (멈춤 상태) */
+    animation: rotate 10s linear infinite;
+    animation-play-state: paused;
+    transition: all 0.5s ease;
+}
+
+/* 인트로 숨기기 보정 */
+#intro.hide, #intro.hidden {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
+}
 
 
 

@@ -1,12 +1,12 @@
-
-```javascript
 window.addEventListener('load', () => {
   setTimeout(() => {
-    document.getElementById('loader').classList.add('hide');
-  }, 2000);
+    const loader = document.getElementById('loader');
+
+    if (loader) {
+      loader.classList.add('hide');
+    }
+  }, 1500);
 });
-
-
 
 
 

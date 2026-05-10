@@ -310,7 +310,140 @@ textarea{
   }
 
 }
+/* MUSIC PLAYER UPGRADE */
 
+.music-card{
+
+  margin-top:40px;
+
+  display:flex;
+  gap:50px;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-wrap:wrap;
+}
+
+.record-player{
+  position:relative;
+}
+
+.record{
+
+  width:260px;
+  height:260px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(circle,#111 15%,#000 35%,#222 55%,#000 100%);
+
+  box-shadow:
+  0 0 40px rgba(143,124,255,0.3);
+
+  animation:spin 6s linear infinite;
+}
+
+.record::before{
+
+  content:'';
+
+  position:absolute;
+
+  width:40px;
+  height:40px;
+
+  background:#999;
+
+  border-radius:50%;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+}
+
+.player-info{
+
+  width:350px;
+
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.player-info h3{
+  font-size:1.3rem;
+  color:#fff;
+}
+
+.upload-btn{
+
+  display:inline-block;
+
+  padding:15px 25px;
+
+  background:#8f7cff;
+
+  border-radius:30px;
+
+  cursor:pointer;
+
+  text-align:center;
+
+  transition:0.3s;
+}
+
+.upload-btn:hover{
+  transform:scale(1.05);
+}
+
+#audio-player{
+  width:100%;
+}
+
+/* LYRICS */
+
+.lyrics-title{
+
+  width:100%;
+
+  padding:18px;
+
+  margin-top:20px;
+
+  border:none;
+  border-radius:15px;
+
+  background:#1a1c25;
+
+  color:white;
+
+  font-size:1rem;
+}
+
+.lyrics-text{
+
+  width:100%;
+
+  min-height:300px;
+
+  margin-top:25px;
+
+  padding:20px;
+
+  border:none;
+  border-radius:20px;
+
+  background:#1a1c25;
+
+  color:white;
+
+  line-height:2;
+
+  resize:none;
+}
 
 
 

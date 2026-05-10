@@ -34,61 +34,65 @@ window.addEventListener('load',()=>{
   },2500);
 
 });
-/* MUSIC PLAYER */
 
-const uploadInput =
-document.getElementById('music-upload');
+document.addEventListener('DOMContentLoaded', () => {
 
-const audioPlayer =
-document.getElementById('audio-player');
+  const uploadInput =
+  document.getElementById('music-upload');
 
-const songTitle =
-document.getElementById('song-title');
+  const audioPlayer =
+  document.getElementById('audio-player');
 
-const record =
-document.getElementById('record');
+  const songTitle =
+  document.getElementById('song-title');
 
-if(uploadInput){
+  const record =
+  document.getElementById('record');
 
-  uploadInput.addEventListener('change',(e)=>{
+  if(uploadInput){
 
-    const file = e.target.files[0];
+    uploadInput.addEventListener('change', function(){
 
-    if(file){
+      const file = this.files[0];
 
-      const audioURL =
-      URL.createObjectURL(file);
+      if(file){
 
-      audioPlayer.src = audioURL;
+        const fileURL =
+        URL.createObjectURL(file);
 
-      songTitle.textContent = file.name;
+        audioPlayer.src = fileURL;
 
-      audioPlayer.load();
+        audioPlayer.style.display = 'block';
 
-    }
+        songTitle.textContent = file.name;
 
-  });
+      }
 
-}
+    });
 
-/* RECORD ANIMATION */
+  }
 
-if(audioPlayer){
+  if(audioPlayer){
 
-  audioPlayer.addEventListener('play',()=>{
+    audioPlayer.addEventListener('play', () => {
 
-    record.style.animationPlayState = 'running';
+      if(record){
+        record.style.animationPlayState = 'running';
+      }
 
-  });
+    });
 
-  audioPlayer.addEventListener('pause',()=>{
+    audioPlayer.addEventListener('pause', () => {
 
-    record.style.animationPlayState = 'paused';
+      if(record){
+        record.style.animationPlayState = 'paused';
+      }
 
-  });
+    });
 
-}
+  }
 
+});
 
 
 

@@ -111,15 +111,36 @@
 
     <h2>나의 노래</h2>
 
-    <div class="music-player">
+    <div class="music-card">
 
-      <div class="record"></div>
+      <div class="record-player">
 
-      <audio controls>
-        <source src="" type="audio/mpeg">
-      </audio>
+        <div class="record" id="record"></div>
 
-      <input type="file" accept="audio/*">
+      </div>
+
+      <div class="player-info">
+
+        <h3 id="song-title">
+          업로드된 음악이 없습니다
+        </h3>
+
+        <audio id="audio-player" controls></audio>
+
+        <label class="upload-btn">
+
+          음악 업로드
+
+          <input
+            type="file"
+            id="music-upload"
+            accept="audio/*"
+            hidden
+          >
+
+        </label>
+
+      </div>
 
     </div>
 
@@ -133,12 +154,20 @@
 
     <h2>가사</h2>
 
-    <textarea placeholder="이곳에 가사를 기록하세요..."></textarea>
+    <input
+      type="text"
+      placeholder="노래 제목을 입력하세요..."
+      class="lyrics-title"
+    >
+
+    <textarea
+      placeholder="이곳에 가사를 기록하세요..."
+      class="lyrics-text"
+    ></textarea>
 
   </div>
 
 </section>
-
 <section id="guestbook" class="page">
 
   <div class="content-box">

@@ -473,6 +473,17 @@ textarea{
 #record { animation: spin 6s linear infinite !important; animation-play-state: paused !important; }
 #intro.hide { opacity: 0; visibility: hidden; pointer-events: none; }
 
+/* 레코드판 회전 강제 활성화 */
+#record {
+    animation: spin 6s linear infinite !important;
+    animation-play-state: paused !important;
+}
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* 인트로 클릭 방해 제거 */
+#intro.hide {
+    display: none !important;
+}
 
 
 

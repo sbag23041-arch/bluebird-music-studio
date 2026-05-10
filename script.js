@@ -1,99 +1,56 @@
-const buttons = document.querySelectorAll('.menu-btn');
-const pages = document.querySelectorAll('.page');
-
-buttons.forEach(button => {
-
-  button.addEventListener('click', () => {
-
-    const target = button.dataset.target;
-
-    pages.forEach(page => {
-      page.classList.remove('active-page');
-    });
-
-    buttons.forEach(btn => {
-      btn.classList.remove('active-btn');
-    });
-
-    document.getElementById(target).classList.add('active-page');
-
-    button.classList.add('active-btn');
-
-  });
-
-});
-/* INTRO */
-
-window.addEventListener('load',()=>{
-
-  setTimeout(()=>{
-
-    document.getElementById('intro')
-    .classList.add('hide');
-
-  },2500);
-
-});
-
 document.addEventListener('DOMContentLoaded', () => {
+    const uploadInput = document.getElementById('music-upload');
+    const audioPlayer = document.getElementById('audio-player');
+    const songTitle = document.getElementById('song-title');
+    const record = document.getElementById('record');
 
-  const uploadInput =
-  document.getElementById('music-upload');
+    // 1. 음악 업로드 및 재생 핵심 로직
+    if (uploadInput && audioPlayer) {
+        uploadInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                // 기존 URL 해제 (메모리 관리)
+                if (audioPlayer.src) URL.revokeObjectURL(audioPlayer.src);
+                
+                const fileURL = URL.createObjectURL(file);
+                audioPlayer.src = fileURL;
+                audioPlayer.load(); // 파일 로드 강제 실행
+                songTitle.textContent = file.name;
+                
+                // 업로드 즉시 재생 시도
+                audioPlayer.play().catch(err => console.log("자동 재생 차단됨: ", err));
+            }
+        });
+    }
 
-  const audioPlayer =
-  document.getElementById('audio-player');
+    // 2. 레코드판 애니메이션 제어
+    if (audioPlayer && record) {
+        audioPlayer.addEventListener('play', () => {
+            record.style.animation = "rotate 10s linear infinite"; // 애니메이션 강제 할당
+            record.style.animationPlayState = 'running';
+        });
+        audioPlayer.addEventListener('pause', () => {
+            record.style.animationPlayState = 'paused';
+        });
+    }
 
-  const songTitle =
-  document.getElementById('song-title');
+    // 3. 인트로 및 네비게이션 (기존 로직 보강)
+    setTimeout(() => {
+        const intro = document.getElementById('intro');
+        if(intro) intro.style.display = 'none';
+    }, 3000);
 
-  const record =
-  document.getElementById('record');
-
-  if(uploadInput){
-
-    uploadInput.addEventListener('change', function(){
-
-      const file = this.files[0];
-
-      if(file){
-
-        const fileURL =
-        URL.createObjectURL(file);
-
-        audioPlayer.src = fileURL;
-
-        audioPlayer.style.display = 'block';
-
-        songTitle.textContent = file.name;
-
-      }
-
+    const buttons = document.querySelectorAll('.menu-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.target;
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+            document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active-btn'));
+            document.getElementById(target).classList.add('active-page');
+            btn.classList.add('active-btn');
+        });
     });
-
-  }
-
-  if(audioPlayer){
-
-    audioPlayer.addEventListener('play', () => {
-
-      if(record){
-        record.style.animationPlayState = 'running';
-      }
-
-    });
-
-    audioPlayer.addEventListener('pause', () => {
-
-      if(record){
-        record.style.animationPlayState = 'paused';
-      }
-
-    });
-
-  }
-
 });
-
 
 
 

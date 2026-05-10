@@ -63,7 +63,7 @@ if(uploadInput){
 
       songTitle.textContent = file.name;
 
-      audioPlayer.play();
+      audioPlayer.load();
 
     }
 

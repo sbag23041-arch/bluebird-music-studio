@@ -446,7 +446,9 @@ textarea{
   resize:none;
 }
 
-
+#music-upload{
+  display:none;
+}
 
 
 

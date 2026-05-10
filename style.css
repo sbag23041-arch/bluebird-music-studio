@@ -171,7 +171,8 @@ nav{
   background:
   radial-gradient(circle,#111 20%,#000 40%,#222 60%,#000 100%);
 
-  animation:spin 6s linear infinite;
+ animation:spin 6s linear infinite;
+animation-play-state:paused;
 }
 
 @keyframes spin{
